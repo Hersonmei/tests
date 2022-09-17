@@ -4,7 +4,7 @@ export default function() {
     const bgAudioForest = new Audio("https://github.com/madalena-rocha/focus-timer-2.0/blob/main/audio/forest.wav?raw=true")
     const bgAudioRain = new Audio("https://github.com/madalena-rocha/focus-timer-2.0/blob/main/audio/rain.wav?raw=true")
     const bgAudioCoffeeShop = new Audio("https://github.com/madalena-rocha/focus-timer-2.0/blob/main/audio/coffee-shop.wav?raw=true")
-    const bgAudioFireplace = new Audio("../audio/rain.wav")
+    const bgAudioFireplace = new Audio("../audio/rain.wav?raw=true")
 
     bgAudioForest.loop = true
     bgAudioRain.loop = true
