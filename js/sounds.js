@@ -3,7 +3,7 @@ export default function() {
     const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
     const bgAudioForest = new Audio("https://github.com/madalena-rocha/focus-timer-2.0/blob/main/audio/forest.wav?raw=true")
     const bgAudioRain = new Audio("https://github.com/madalena-rocha/focus-timer-2.0/blob/main/audio/rain.wav?raw=true")
-    const bgAudioCoffeeShop = new Audio("../audio/coffee-shop.wav?raw=true")
+    const bgAudioCoffeeShop = new Audio("../audio/coffee-shop.wav")
     const bgAudioFireplace = new Audio("../audio/rain.wav?raw=true")
 
     bgAudioForest.loop = true
