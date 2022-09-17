@@ -9,6 +9,7 @@ const buttonSoundFireplace = document.querySelector('.sound-fireplace')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
 
+
 export {
     buttonPlay,
     buttonStop,
