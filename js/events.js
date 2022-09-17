@@ -1,56 +1,95 @@
+
 import {
-    buttonPlay,
-    buttonStop,
-    buttonPlus,
-    buttonMinus,
-    buttonSoundForest,
-    buttonSoundRain,
-    buttonSoundCoffeeShop,
-    buttonSoundFireplace
-} from "./elements.js"
+    btnForest,
+    btnRain,
+    btnCafeteria,
+    btnFireplace,
+    volumeForest,
+    volumeRain,
+    volumeFire,
+    volumeCafeteria,
+    whiteMode,
+    darkMode,
+    btnPanel,
+    btnPlay,
+    btnPause,
+    btnTimeUp,
+    btnTimeDown,
+} from  "./elements.js"
 
-export default function({controls, timer, sound}) {
-    buttonPlay.addEventListener('click', function() {
-        timer.countdown()
-        sound.pressButton()
+
+export function Events({
+    sounds,
+    theme,
+    timer
+}){
+    
+    btnPanel.forEach(btn => btn.addEventListener('click', () => {
+        theme.removeClassActive()
+        sounds.cancelAudio()
+        btn.classList.toggle("active")
+    }))
+
+    btnForest.addEventListener('click', () => {   
+       sounds.audioForest.play()
     })
 
-    buttonStop.addEventListener('click', function() {
-        timer.reset()
-        sound.pressButton()
+    volumeForest.addEventListener('change', () => {
+        sounds.audioForest.volume = volumeForest.value
     })
 
-    buttonPlus.addEventListener('click', function() {
-        timer.plus()
-        sound.pressButton()
+    btnRain.addEventListener('click', () => {
+        sounds.audioRain.play()
     })
 
-    buttonMinus.addEventListener('click', function() {
-        timer.minus()
-        sound.pressButton()
+    volumeRain.addEventListener('change', () => {
+        sounds.audioRain.volume = volumeRain.value
     })
 
-    buttonSoundForest.addEventListener('click', function() {
-        controls.soundForest()
-        sound.pressButton()
-        sound.audioForest()
+    btnCafeteria.addEventListener('click', () => {
+        sounds.audioCafeteria.play()
     })
 
-    buttonSoundRain.addEventListener('click', function() {
-        controls.soundRain()
-        sound.pressButton()
-        sound.audioRain()
+    volumeCafeteria.addEventListener('change', () => {
+        sounds.audioCafeteria.volume = volumeCafeteria.value
     })
 
-    buttonSoundCoffeeShop.addEventListener('click', function() {
-        controls.soundCoffeeShop()
-        sound.pressButton()
-        sound.audioCoffeeShop()
+    btnFireplace.addEventListener('click', () => {
+        sounds.audioFireplace.play()
     })
 
-    buttonSoundFireplace.addEventListener('click', function() {
-        controls.soundFireplace()
-        sound.pressButton()
-        sound.audioFireplace()
+    volumeFire.addEventListener('change', () => {
+        sounds.audioFireplace.volume = volumeFire.value
+    })
+
+    //Events Dark Mode
+
+    whiteMode.addEventListener('click', () => {
+        theme.whiteTheme()
+    })
+    
+    darkMode.addEventListener('click', () => {
+        theme.darkTheme()
+    })
+
+    
+    // Events Buttons Play, Pause, TimeUp, TimeDown
+
+    btnPlay.addEventListener("click", () => {
+        timer.play()
+    })
+
+    btnPause.addEventListener("click", () =>{
+        timer.pause()
+    })
+    
+    btnTimeUp.addEventListener("click", () => {
+        timer.timeUp()
+    })
+    
+    btnTimeDown.addEventListener("click", () => {
+        timer.timeDown()
     })
 }
+
+

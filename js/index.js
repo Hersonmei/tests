@@ -1,29 +1,18 @@
-import Controls from "./controls.js"
+import { Events } from "./events.js"
+import { Sounds } from "./sounds.js"
+import Theme from "./theme.js"
 import Timer from "./timer.js"
-import Sound from "./sounds.js"
-import Events from "./events.js"
-import {
-    buttonSoundForest,
-    buttonSoundRain,
-    buttonSoundCoffeeShop,
-    buttonSoundFireplace,
-    minutesDisplay,
-    secondsDisplay
-} from "./elements.js"
 
-const controls = Controls({
-    buttonSoundForest,
-    buttonSoundRain,
-    buttonSoundCoffeeShop,
-    buttonSoundFireplace
+const sounds = Sounds()
+
+const theme = Theme()
+
+const timer = Timer({theme})
+
+Events({
+    sounds,
+    theme,
+    timer
 })
 
-const timer = Timer({
-    minutesDisplay,
-    secondsDisplay,
-    resetControls: controls.reset
-})
 
-const sound = Sound()
-
-Events({controls, timer, sound})
